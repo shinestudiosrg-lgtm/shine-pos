@@ -23,14 +23,14 @@ git add .
 
 echo.
 echo [3/4] Membuat commit...
-git commit -m "Upload SHINE POS Web App - Vercel PWA & WhatsApp Integration"
+git commit -m "Upload SHINE POS Web App - Vercel PWA & WhatsApp Integration" >nul 2>&1
 
 echo.
 echo [4/4] Mengunggah ke GitHub...
 git branch -M main
 git remote remove origin >nul 2>&1
 git remote add origin %REPO_URL%
-git push -u origin main
+git push -u origin main --force
 
 echo.
 echo ===================================================
