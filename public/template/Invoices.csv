@@ -1,0 +1,2 @@
+id,invoiceNumber,date,cashierName,customerName,items,subtotal,discount,tax,grandTotal,paymentMethod,status
+inv-1001,INV-20260814-001,2026-08-14T10:00:00.000Z,Owner Studio,Umum / Walk-in Customer,"[{""id"":""prd-102"",""name"":""Sesi Self Photo Box 15 Min"",""price"":50000,""qty"":1,""total"":50000}]",50000,0,5500,55500,QRIS,Lunas

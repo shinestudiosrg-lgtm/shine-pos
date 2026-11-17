@@ -1,0 +1,479 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --blue: #063b7a;
+    --blue-dark: #032653;
+    --blue-bright: #145ef3;
+    --blue-pale: #e8f0ff;
+    --yellow: #ffd028;
+    --yellow-hover: #f5c316;
+    --yellow-pale: #fff7cc;
+    --ink: #101828;
+    --muted: #5d6878;
+    --line: #d9e1ec;
+    --cloud: #f4f7fb;
+    --cream: #fdfbf7;
+    --white: #ffffff;
+
+    --bg-body: #f4f7fb;
+    --text-body: #101828;
+    --card-bg: #ffffff;
+    --card-border: #032653;
+    --card-shadow: 4px 4px 0 #ffd028;
+    --header-bg: #ffffff;
+    --sidebar-bg: #032653;
+  }
+
+  html.dark {
+    --bg-body: #021a38;
+    --text-body: #f8fafc;
+    --card-bg: #06346b;
+    --card-border: #ffd028;
+    --card-shadow: 4px 4px 0 #ffd028;
+    --header-bg: #032653;
+    --sidebar-bg: #021833;
+  }
+
+  body {
+    background-color: var(--bg-body);
+    color: var(--text-body);
+    @apply antialiased font-sans min-h-screen transition-colors duration-150;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom scrollbars matching Shine Blue & Yellow */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #e8f0ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #063b7a;
+  border-radius: 9999px;
+  border: 1px solid #ffd028;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffd028;
+  border-color: #032653;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SHINE PHOTO STUDIO SIGNATURE CARDS & PANELS
+   Design System: https://shinephotostudio.my.id/
+   ══════════════════════════════════════════════════════════════════ */
+
+.shine-card {
+  background-color: #ffffff;
+  border: 2px solid #032653;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #ffd028;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+}
+
+html.dark .shine-card {
+  background-color: #06346b;
+  border-color: #ffd028;
+  box-shadow: 4px 4px 0 #032653;
+}
+
+.shine-card-soft {
+  background-color: #ffffff;
+  border: 1.5px solid #d9e1ec;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(3, 38, 83, 0.05);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+html.dark .shine-card-soft {
+  background-color: #052a57;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.shine-card-navy {
+  background-color: #032653;
+  color: #ffffff;
+  border: 2px solid #032653;
+  border-radius: 16px;
+  box-shadow: 4px 4px 0 #ffd028;
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-card-interactive {
+  background-color: #ffffff;
+  border: 2px solid #d9e1ec;
+  border-radius: 16px;
+  box-shadow: 3px 3px 0 #d9e1ec;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.shine-card-interactive:hover {
+  border-color: #032653;
+  box-shadow: 5px 5px 0 #ffd028;
+  transform: translateY(-2px);
+}
+
+html.dark .shine-card-interactive {
+  background-color: #06346b;
+  border-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+html.dark .shine-card-interactive:hover {
+  border-color: #ffd028;
+  box-shadow: 5px 5px 0 #ffd028;
+}
+
+/* Yellow accent bar on top of cards, exactly like .price-card::before from the website */
+.shine-accent-bar {
+  position: relative;
+}
+.shine-accent-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background-color: #ffd028;
+  border-radius: 14px 14px 0 0;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   SHINE PHOTO STUDIO BUTTONS
+   Neo-pop Playful & Professional Button Suite
+   ══════════════════════════════════════════════════════════════════ */
+
+.btn-shine-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffd028;
+  color: #032653;
+  border: 2px solid #032653;
+  border-radius: 10px;
+  font-weight: 850;
+  box-shadow: 3px 3px 0 #032653;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-shine-yellow:hover {
+  background-color: #ffda47;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #032653;
+}
+
+.btn-shine-yellow:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #032653;
+}
+
+.btn-shine-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #032653;
+  color: #ffffff;
+  border: 2px solid #032653;
+  border-radius: 10px;
+  font-weight: 850;
+  box-shadow: 3px 3px 0 #ffd028;
+  transition: all 0.12s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-shine-blue:hover {
+  background-color: #063b7a;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #ffd028;
+}
+
+.btn-shine-blue:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 #ffd028;
+}
+
+.btn-shine-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #032653;
+  border: 2px solid #032653;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 2px 2px 0 #032653;
+  transition: all 0.12s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn-shine-outline:hover {
+  background-color: #f4f7fb;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #032653;
+}
+
+.btn-shine-outline:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 #032653;
+}
+
+.btn-shine-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #e8f0ff;
+  color: #063b7a;
+  border: 1.5px solid #d9e1ec;
+  border-radius: 10px;
+  font-weight: 750;
+  transition: all 0.12s ease;
+  cursor: pointer;
+}
+
+.btn-shine-ghost:hover {
+  background-color: #d6e5ff;
+  color: #032653;
+  border-color: #063b7a;
+}
+
+.btn-shine-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #fee2e2;
+  color: #dc2626;
+  border: 2px solid #dc2626;
+  border-radius: 10px;
+  font-weight: 800;
+  box-shadow: 2px 2px 0 #dc2626;
+  transition: all 0.12s ease;
+  cursor: pointer;
+}
+
+.btn-shine-danger:hover {
+  background-color: #fca5a5;
+  transform: translate(-1px, -1px);
+  box-shadow: 3px 3px 0 #dc2626;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   INPUTS, SELECTS, FORMS
+   ══════════════════════════════════════════════════════════════════ */
+
+.shine-input {
+  width: 100%;
+  border: 2px solid #d9e1ec;
+  border-radius: 12px;
+  background-color: #ffffff;
+  color: #101828;
+  font-weight: 600;
+  padding: 10px 14px;
+  transition: all 0.15s ease;
+  font-size: 14px;
+}
+
+.shine-input-with-icon {
+  padding-left: 44px !important;
+}
+
+.shine-input:focus {
+  border-color: #063b7a;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(6, 59, 122, 0.12), 2px 2px 0 #ffd028;
+}
+
+html.dark .shine-input {
+  background-color: #05264e;
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+html.dark .shine-input:focus {
+  border-color: #ffd028;
+  box-shadow: 0 0 0 3px rgba(255, 208, 40, 0.2), 2px 2px 0 #ffd028;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BADGES & LABELS
+   ══════════════════════════════════════════════════════════════════ */
+
+.shine-badge-yellow {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #ffd028;
+  color: #032653;
+  border: 1.5px solid #032653;
+  font-weight: 900;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+  box-shadow: 1.5px 1.5px 0 #032653;
+}
+
+.shine-badge-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #032653;
+  color: #ffffff;
+  font-weight: 850;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
+
+.shine-badge-pale {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #e8f0ff;
+  color: #063b7a;
+  border: 1px solid #c7d9f7;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  font-size: 11px;
+}
+
+.shine-badge-green {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #e6f9ed;
+  color: #0e7036;
+  border: 1px solid #99e3b5;
+  font-weight: 800;
+  border-radius: 9999px;
+  padding: 3px 10px;
+  font-size: 11px;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   TABLES
+   ══════════════════════════════════════════════════════════════════ */
+
+.shine-table-wrap {
+  border: 2px solid #032653;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 4px 4px 0 #ffd028;
+}
+
+html.dark .shine-table-wrap {
+  background-color: #06346b;
+  border-color: #ffd028;
+  box-shadow: 4px 4px 0 #032653;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   BACKWARD COMPATIBILITY ALIASES
+   Keeps any legacy class names working smoothly with the new theme
+   ══════════════════════════════════════════════════════════════════ */
+
+.glass-panel {
+  background-color: var(--card-bg);
+  border: 2px solid #d9e1ec;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(3, 38, 83, 0.05);
+}
+
+.glass-panel-interactive {
+  background-color: var(--card-bg);
+  border: 2px solid #d9e1ec;
+  border-radius: 16px;
+  box-shadow: 3px 3px 0 #d9e1ec;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-panel-interactive:hover {
+  border-color: #032653;
+  box-shadow: 4px 4px 0 #ffd028;
+  transform: translateY(-2px);
+}
+
+.btn-glass-pink {
+  @apply btn-shine-yellow;
+}
+
+.btn-glass-yellow {
+  @apply btn-shine-yellow;
+}
+
+.btn-glass-blue {
+  @apply btn-shine-blue;
+}
+
+.btn-glass-neutral {
+  @apply btn-shine-outline;
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   PRINT MEDIA STYLES
+   Optimized for thermal receipts and formal A4/Letter PDF reports
+   ══════════════════════════════════════════════════════════════════ */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  .no-print,
+  nav,
+  aside,
+  header,
+  .shine-sidebar,
+  button {
+    display: none !important;
+  }
+
+  #thermal-receipt {
+    visibility: visible !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 80mm !important;
+    padding: 4mm !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  #printable-report {
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    padding: 10mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .print-document {
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+}
+

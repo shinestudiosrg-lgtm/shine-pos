@@ -1,0 +1,6 @@
+id,sku,name,category,buyPrice,sellPrice,stock,minStock,image
+prd-101,PS-001,Paket Photo Studio Family,Photo Studio,50000,250000,100,5,https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&auto=format&fit=crop&q=80
+prd-102,PB-001,Sesi Self Photo Box 15 Min,Photo Box,10000,50000,50,5,https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400&auto=format&fit=crop&q=80
+prd-103,PB-002,Cetak Photo Strip 2 Pcs,Photo Box,2000,15000,200,10,https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=400&auto=format&fit=crop&q=80
+prd-104,PB-003,Photobooth Unlimited Event 2 Jam,Photobooth,500000,1500000,10,2,https://images.unsplash.com/photo-1519741497674-611481863552?w=400&auto=format&fit=crop&q=80
+prd-105,CF-001,Cetak Foto Kanvas 40x60 Frame Kayu,Cetak Foto & Frame,40000,175000,30,5,https://images.unsplash.com/photo-1513519245088-0e12902e5a38?w=400&auto=format&fit=crop&q=80

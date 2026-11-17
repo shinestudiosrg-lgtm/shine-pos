@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ 
+ <Styles>
+  <Style ss:ID="HeaderStyle">
+   <Font ss:FontName="Segoe UI" ss:Size="11" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#4F46E5" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+  </Style>
+  <Style ss:ID="TitleStyle">
+   <Font ss:FontName="Segoe UI" ss:Size="14" ss:Color="#FFFFFF" ss:Bold="1"/>
+   <Interior ss:Color="#1E1B4B" ss:Pattern="Solid"/>
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center"/>
+  </Style>
+  <Style ss:ID="CurrencyStyle">
+   <NumberFormat ss:Format="&quot;Rp&quot;\ #,##0"/>
+  </Style>
+ </Styles>
+
+ <Worksheet ss:Name="DASHBOARD">
+  <Table>
+   <Column ss:Width="220"/>
+   <Column ss:Width="160"/>
+   <Row ss:Height="40">
+    <Cell ss:MergeAcross="1" ss:StyleID="TitleStyle"><Data ss:Type="String">✨ SHINE PHOTO STUDIO - RINGKASAN PENJUALAN TOKO ✨</Data></Cell>
+   </Row>
+   <Row><Cell><Data ss:Type="String"></Data></Cell></Row>
+   <Row>
+    <Cell><Data ss:Type="String">Total Omset Penjualan (Lunas):</Data></Cell>
+    <Cell ss:Formula="=SUMIF(Invoices!K:K, &quot;Lunas&quot;, Invoices!I:I)" ss:StyleID="CurrencyStyle"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Total Transaksi Sukses:</Data></Cell>
+    <Cell ss:Formula="=COUNTIF(Invoices!K:K, &quot;Lunas&quot;)"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Total Diskon Diberikan:</Data></Cell>
+    <Cell ss:Formula="=SUM(Invoices!G:G)" ss:StyleID="CurrencyStyle"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">Total Pajak Terkumpul:</Data></Cell>
+    <Cell ss:Formula="=SUM(Invoices!H:H)" ss:StyleID="CurrencyStyle"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <Worksheet ss:Name="Products">
+  <Table>
+   <Column ss:Width="100"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="200"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="250"/>
+   <Row ss:Height="25">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">id</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">sku</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">name</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">category</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">buyPrice</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">sellPrice</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">stock</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">minStock</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">image</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">prd-101</Data></Cell>
+    <Cell><Data ss:Type="String">PS-001</Data></Cell>
+    <Cell><Data ss:Type="String">Paket Photo Studio Family</Data></Cell>
+    <Cell><Data ss:Type="String">Photo Studio</Data></Cell>
+    <Cell ss:StyleID="CurrencyStyle"><Data ss:Type="Number">50000</Data></Cell>
+    <Cell ss:StyleID="CurrencyStyle"><Data ss:Type="Number">250000</Data></Cell>
+    <Cell><Data ss:Type="Number">100</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+    <Cell><Data ss:Type="String">https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=400&amp;auto=format&amp;fit=crop&amp;q=80</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">prd-102</Data></Cell>
+    <Cell><Data ss:Type="String">PB-001</Data></Cell>
+    <Cell><Data ss:Type="String">Sesi Self Photo Box 15 Min</Data></Cell>
+    <Cell><Data ss:Type="String">Photo Box</Data></Cell>
+    <Cell ss:StyleID="CurrencyStyle"><Data ss:Type="Number">10000</Data></Cell>
+    <Cell ss:StyleID="CurrencyStyle"><Data ss:Type="Number">50000</Data></Cell>
+    <Cell><Data ss:Type="Number">50</Data></Cell>
+    <Cell><Data ss:Type="Number">5</Data></Cell>
+    <Cell><Data ss:Type="String">https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=400&amp;auto=format&amp;fit=crop&amp;q=80</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <Worksheet ss:Name="Invoices">
+  <Table>
+   <Column ss:Width="100"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="140"/>
+   <Column ss:Width="250"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="110"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="80"/>
+   <Row ss:Height="25">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">id</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">invoiceNumber</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">date</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">cashierName</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">customerName</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">items</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">subtotal</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">discount</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">tax</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">grandTotal</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">paymentMethod</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">status</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <Worksheet ss:Name="Customers">
+  <Table>
+   <Column ss:Width="100"/>
+   <Column ss:Width="180"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="120"/>
+   <Row ss:Height="25">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">id</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">name</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">phone</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">points</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">totalSpend</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">cst-1</Data></Cell>
+    <Cell><Data ss:Type="String">Umum / Walk-in Customer</Data></Cell>
+    <Cell><Data ss:Type="String">-</Data></Cell>
+    <Cell><Data ss:Type="Number">0</Data></Cell>
+    <Cell ss:StyleID="CurrencyStyle"><Data ss:Type="Number">0</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+
+ <Worksheet ss:Name="Users">
+  <Table>
+   <Column ss:Width="100"/>
+   <Column ss:Width="150"/>
+   <Column ss:Width="180"/>
+   <Column ss:Width="100"/>
+   <Column ss:Width="80"/>
+   <Column ss:Width="90"/>
+   <Column ss:Width="120"/>
+   <Column ss:Width="150"/>
+   <Row ss:Height="25">
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">id</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">name</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">email</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">password</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">role</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">status</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">phone</Data></Cell>
+    <Cell ss:StyleID="HeaderStyle"><Data ss:Type="String">registeredAt</Data></Cell>
+   </Row>
+   <Row>
+    <Cell><Data ss:Type="String">usr-1</Data></Cell>
+    <Cell><Data ss:Type="String">Owner Studio</Data></Cell>
+    <Cell><Data ss:Type="String">owner</Data></Cell>
+    <Cell><Data ss:Type="String">owner123</Data></Cell>
+    <Cell><Data ss:Type="String">owner</Data></Cell>
+    <Cell><Data ss:Type="String">approved</Data></Cell>
+    <Cell><Data ss:Type="String">081234567890</Data></Cell>
+    <Cell><Data ss:Type="String">2026-08-14T08:00:00.000Z</Data></Cell>
+   </Row>
+  </Table>
+ </Worksheet>
+</Workbook>

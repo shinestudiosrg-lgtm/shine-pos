@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icons/icon-192.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SHINE PHOTO STUDIO - Aplikasi Kasir & POS Studio</title>
+    
+    <!-- PWA Web App Manifest & Android WebAPK Requirements -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#032653" />
+    <meta name="background-color" content="#032653" />
+    <meta name="application-name" content="Shine POS" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    
+    <!-- iOS Web App Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Shine POS" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#f4f7fb] text-[#101828] font-sans antialiased selection:bg-[#ffd028] selection:text-[#032653] min-h-screen overflow-x-hidden">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Register PWA Service Worker for Native Android Installation -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(reg) {
+              console.log('✅ Shine POS Service Worker registered successfully:', reg.scope);
+            })
+            .catch(function(err) {
+              console.warn('⚠️ Service Worker registration failed:', err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
